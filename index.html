@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h2>Student Management System</h2>
+</header>
+
+<div class="container">
+
+    <!-- LOGIN -->
+    <div id="loginSection" class="card">
+        <h3>Login</h3>
+        <input type="text" id="username" placeholder="Username"><br>
+
+        <select id="role">
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+            <option value="admin">Admin</option>
+        </select><br>
+
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="hidden">
+
+        <h3 id="welcome"></h3>
+
+        <!-- ADMIN PANEL -->
+        <div id="adminPanel" class="card hidden">
+            <h3>Add Student</h3>
+
+            <input type="text" id="studentName" placeholder="Full Name"><br>
+
+            <input type="text" id="rollNumber" placeholder="Roll Number"><br>
+
+            <select id="course" onchange="updateYears()">
+                <option value="">Select Course</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="MBA">MBA</option>
+                <option value="BSc">BSc</option>
+                <option value="BCA">BCA</option>
+                <option value="BBA">BBA</option>
+            </select><br>
+
+            <select id="year">
+                <option value="">Select Year</option>
+            </select><br>
+
+            <input type="text" id="studentContact" placeholder="Contact Number"><br>
+
+            <button onclick="addStudent()">Add Student</button>
+        </div>
+
+        <!-- STUDENT RECORDS -->
+        <div class="card">
+            <h3>Student Records</h3>
+            <ul id="studentList"></ul>
+        </div>
+
+        <!-- TEACHER PANEL -->
+        <div id="teacherPanel" class="card hidden">
+            <h3>Mark Attendance</h3>
+
+            <select id="attendanceStudent"></select>
+
+            <select id="attendanceStatus">
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+
+            <button onclick="markAttendance()">Submit</button>
+        </div>
+
+        <!-- MARKS PANEL -->
+        <div id="marksPanel" class="card hidden">
+            <h3>Add Marks</h3>
+
+            <select id="marksStudent"></select>
+
+            <input type="number" id="marksValue" placeholder="Enter Marks"><br>
+
+            <button onclick="addMarks()">Submit</button>
+        </div>
+
+        <!-- REPORTS -->
+        <div class="card">
+            <h3>Reports</h3>
+            <ul id="reportList"></ul>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
